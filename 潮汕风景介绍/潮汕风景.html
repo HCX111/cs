@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+            <style>
+                *{
+                    margin: 0px;
+                    padding: 0px;
+                    list-style: none;
+                }
+                div{
+                    width: 1500px;
+                    height: 1300px;
+                    margin: 0px auto;
+                 /* background: orange;   */
+                 overflow: hidden; 
+                }
+               
+                .t{
+            width: 1500px;
+            height: 150px;
+            margin: 0px auto;
+             background: aqua; 
+        }
+        .t img{
+            width: 500px;
+            height: 150px;
+            float: left;
+        }
+        ul li{
+            float: left;
+            margin: 60px 25px;
+        }
+        a{
+            text-decoration: none;
+            color: black;
+        }
+        .t{
+            background-image: url(images/w4.jpg);
+                background-repeat: no-repeat;
+                background-size: 150% auto;
+        }
+        a{
+            color: black;
+        }
+        .a1{
+            width: 1500px;
+            height: 400px;
+            margin: 0px auto;
+             background: red; 
+        }
+        .a1 img{
+           position: absolute;
+           /* border: 1px solid khaki; */
+           padding: 10px;
+           /* background: skyblue; */
+           transform: all 1s;
+           width: 300px;
+           height: 300px;
+           cursor: pointer;
+       }
+      .a1 img:nth-of-type(1){
+           left: 235px;
+           top:190px;
+           transform: rotate(20deg)
+       }
+      .a1 img:nth-of-type(2){
+           left: 502px;
+           top: 195px;
+           transform: rotate(-10deg)
+       }
+      .a1 img:nth-of-type(3){
+           left: 793px;
+           top: 197px;
+           transform: rotate(10deg);
+           z-index: 4;
+       }
+       .a1 img:nth-of-type(4){
+           left: 1066px;
+           top: 192px;
+           transform: rotate(-10deg);
+           z-index: 3;                    
+       }
+      .a1 img:nth-of-type(5){
+           left:1351px;
+           top: 181px;
+           transform: rotate(20deg);
+           z-index: 2;
+       }
+      .a1 img:hover{
+           transform: rotate(0deg);
+           z-index: 10;
+       }
+       .a2{
+           width: 1500px;
+           height: 800px;
+           background: lawngreen;
+           margin: 0px auto;
+       }
+       .a3{
+           width: 500px;
+           height: 500px;
+           margin: 150px 0px;
+           /* background: tomato; */
+           float: left;
+       }
+       .a3 main{
+           width:200px;
+           height: 200px;
+           margin: 100px auto;
+       }
+       .a3 ul{
+            width: 200px;
+            height: 200px;
+            /* background: red; */
+           
+            position: relative;
+            transform-style: preserve-3d;
+            animation: move 2s infinite linear;
+        }
+        @keyframes move {
+            0%{
+                transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg)
+            }
+           100%{
+                transform: rotateX(180deg) rotateY(180deg) rotateZ(180deg)
+            }
+        }
+        .a3 li{
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            /* border: 1px solid orange; */
+            left: 0px;
+            top: 0px;
+        }
+       .a3 li:nth-of-type(1){
+            /* background: palegreen; */
+            transform: translateZ(100px)
+        } 
+        .a3 li:nth-of-type(2){
+            /* background: goldenrod; */
+            transform: translateZ(-100px)
+        } 
+       .a3 li:nth-of-type(3){
+            /* background: orchid; */
+            transform: translateX(-100px) rotateY(90deg)
+        } 
+       .a3 li:nth-of-type(4){
+            /* background:lightblue; */
+            transform: translateX(100px) rotateY(90deg)
+        } 
+       .a3 li:nth-of-type(5){
+            /* background: red; */
+            transform: translateY(100px) rotateX(90deg)
+        }
+       .a3 li:nth-of-type(6){
+            /* background: yellow; */
+            transform: translateY(-100px) rotateX(-90deg)
+        }  
+        .a3 img{
+            width: 200px;
+            height: 200px;
+        }
+        .a4{
+            width: 1000px;
+            height: 750px;
+            /* background: tan; */
+            float: right;
+        }
+        .a4 ul li{
+                 width: 400px;
+                height: 311px;
+                /* border-bottom:1px solid red; */
+                /* background:pink; */
+                float: left;
+                margin-right: -100px;
+               margin-bottom: -80px;
+                margin-top: 15px
+        }
+        .a4 img{
+            width: 300px;
+            height: 200px;
+        }
+      .a1{
+        background-image: url(images/s19.jfif);
+                background-repeat: no-repeat;
+                background-size: 150% auto;
+      }
+      .a2{
+        background-image: url(images/s23.jpg);
+                background-repeat: no-repeat;
+                background-size: 150% auto;
+      }
+     
+        </style>
+    </head>
+    <body>
+        <div>
+            <div class="t">
+                <img src="images/t5.jfif" alt=""> 
+                <ul>
+                    <li>
+                        <a href="index.html" target="_blank">首页</a>
+                   </li>
+                    <li>
+                        <a href="发布留言.html" target="_blank">留言板</a>
+                    </li>
+                    <li>
+                        <a href="潮汕风景.html" target="_blank">潮汕风景</a>
+                    </li>
+                    <li><a href="潮汕文化.html" target="_blank">潮汕文化</a>
+                    </li>
+                    <li>
+                        <a href="潮汕美食.html" target="_blank">潮汕美食</a>
+                    </li>
+                    <li>
+                        <a href="揭阳简介.html" target="_blank">揭阳简介</a>
+                    </li>
+                    <li>
+                        <a href="潮州简介.html" target="_blank">潮州简介</a>
+                    </li>
+                    <li>
+                        <a href="汕头简介.html"  target="_blank">汕头简介</a>
+                    </li>
+                    <li>
+                        <a href="潮汕建筑.html" target="_blank">潮汕建筑</a>
+                    </li>
+                </ul>        
+            </div>
+            <div class="a1">
+               <img src="images/s1.jfif" alt="">
+               <img src="images/s2.jfif" alt="">
+               <img src="images/s3.jpg" alt="">
+               <img src="images/s5.jfif" alt="">
+               <img src="images/s6.jfif" alt="">
+            </div>
+            <div class="a2">
+                <div class="a3">
+                   <main>
+                    <ul>
+                        <li><img src="images/s7.jfif" alt=""></li>
+                         <li><img src="images/s8.png" alt=""></li>
+                         <li><img src="images/s9.jfif" alt=""></li>
+                         <li><img src="images/s10.jfif" alt=""></li>
+                         <li><img src="images/s11.jfif" alt=""></li>
+                         <li><img src="images/s12.jfif" alt=""></li>
+                     </ul>
+                   </main>
+                </div>
+                <div class="a4">
+                    <ul>
+                        <li><img src="images/s13.jfif" alt=""></li>
+                        <li><img src="images/s14.jfif" alt=""></li>
+                        <li><img src="images/s15.jpg" alt=""></li>
+                        <li><img src="images/s16.jpg" alt=""></li>
+                        <li><img src="images/s17.jpg" alt=""></li>
+                        <li><img src="images/s18.jfif" alt=""></li>
+                        <li><img src="images/s19.jfif" alt=""></li>
+                        <li><img src="images/s20.jfif" alt=""></li>
+                        <li><img src="images/s21.jpg" alt=""></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

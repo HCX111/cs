@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+        <style>
+            *{
+                margin: 0px;
+                padding: 0px;
+                list-style: none;
+            }
+            textarea{
+                width: 800px;
+                margin:10px auto;
+                display: block;
+                resize: none;
+                outline: none;
+            }
+            button{
+                width: 800px;
+                margin:10px auto;
+                display: block;
+                background:#f60;
+                border: none;
+                cursor: pointer;
+                line-height: 40px;
+                color:white;
+            }
+          ul{
+                width: 800px;
+                margin:10px auto;
+                display: block;
+            }
+         li{
+                background:lightgreen;
+                padding:10px;
+                margin-bottom: 10px;
+                position: relative;
+            }
+            span{
+                position: absolute;
+                right: -5px;
+                top:-5px;
+                cursor: pointer;
+            }
+            .a1{
+                width: 1500px;
+                height: 800px;
+                margin: 0px auto;
+                background: teal;
+            }
+            .a1{
+                background-image: url(images/w4.jpg);
+                background-repeat: no-repeat;
+                background-size: 150% auto;
+            }
+        </style>
+    </head>
+    <body> 
+    <div class="a1">
+        <textarea name="" id="txt" cols="30" rows="10"></textarea>
+        <button id="btn">发布留言</button>
+        <ul id="con">
+            <li>
+               欢迎来到潮汕
+                <p>2021-06-01</p>
+                <span onclick="del(this)">X</span>
+            </li> 
+        </ul>
+        <script>
+            var con=document.getElementById('con')
+            var txt=document.getElementById('txt')
+            var btn=document.getElementById('btn')
+            btn.onclick=function(){
+                var tag=document.createElement('li');
+                tag.innerHTML=`${txt.value}
+                <p>2021-06-01</p>
+                <span onclick="del(this)">X</span>`;
+                con.appendChild(tag)
+                txt.value='';
+            }
+            function del(a){
+                a.parentNode.parentNode.removeChild(a.parentNode)
+            }      
+        </script>
+        </div>
+    </body>
+</html>

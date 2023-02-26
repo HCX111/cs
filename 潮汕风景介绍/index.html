@@ -1,0 +1,229 @@
+<style>
+    *{
+        margin: 0px;
+        padding: 0px;
+        list-style: none;
+    }
+    img{
+        width: 1200px;
+        height: 350px;
+    }
+    .v{
+        width: 1200px;
+        height: 350px;
+        /* display: block; */
+        margin: 0px auto;
+        position: relative;
+        overflow: hidden;
+        /* border-radius: 15%; */
+        background: aqua;
+    }
+    ul{
+        width: 9900px;
+        overflow: hidden;
+    }
+    ul li{
+        float: left;
+    }
+    ol{
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    ol li{
+        width: 8px;
+        height: 8px;
+        background: white;
+        border-radius: 50%;
+        float: left;
+        margin: 0px 4px;
+        cursor: pointer;
+    }
+    .a1{
+        background: aqua;
+    }
+    .a2{
+        background: tomato;
+        width: 1200px;
+        height: 50px;
+        margin: 0px auto;
+    }
+    .a2 ul li{
+       /* border: 1px solid skyblue; */
+       float: left;
+       margin: 15px 35px; 
+       /* display: block; */
+     }
+    .a2 a{ 
+       text-decoration: none;
+       color:white;
+    }
+    .a3{
+        width: 1200px;
+        height: 1000px;
+         /* background: orange;  */
+        margin: 0px auto;
+        overflow: hidden;
+    }
+    video{
+        width: 1200px;
+        height: 500px;
+     }
+    .a3 p{
+          word-break: break-all;
+          /* width: 500px; */
+          /* float: right; */
+          font-family: '楷体';
+         margin: 10px 0px;
+         line-height: 40px;
+         color: white;
+    }
+    .a3 img{
+         width: 500px;
+         height: 500px;
+         float: left;
+         margin: 10px 0px ;
+     }
+     .e{
+         overflow: hidden;
+         width: 1500px;
+         height: 1500px;
+         background: tomato;
+         margin: 0px auto;
+     }
+     .e{
+        background-image: url(images/i2.jpg);
+                background-repeat: no-repeat;
+                background-size: 150% auto;
+     }
+</style>
+</head>
+<body>
+    <div class="e">
+<div id="b1" class="v">
+<ul id="b2">
+    <li>
+        <img src="images/o3.jpg" alt="">
+    </li>
+    <li><img src="images/o4.jpg" alt=""> </li>
+        <li><img src="images/o5.jpg" alt=""></li>
+        <li><img src="images/o6.jpg" alt=""></li>
+    <li><img src="images/o7.jpg" alt="">
+</ul>
+<ol id="list">
+    <li class="a1"></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ol>
+</div>
+<script>
+    var b2=document.getElementById('b2')
+    var b1=document.getElementById('b1')
+    var leftt=document.getElementById('left')
+    var right=document.getElementById('right')
+    var list=document.getElementById('list').children
+    var num=0;
+    var time;
+    function fu(){
+        time=setInterval(function(){
+            num++;
+            if(num>4){
+                num=0;
+            }
+            var t=-num*1200;
+            b2.style.transform='translateX('+t+'px)';
+            for(var j=0;j<list.length;j++){
+                list[j].className='';
+            }
+            list[num].className='a1'
+        },1000)
+    }
+    fu()
+    b2.onmouseenter=function(){
+        clearInterval(time)
+    }
+    b2.onmouseleave=function(){
+        fu()
+    }
+    for(var i=0;i<list.length;i++){
+        list[i].index=i;
+        list[i].onclick=function(){
+            for(var j=0;j<list.length;j++){
+                list[j].className='';
+            }
+            this.className='current';
+            num=this.index;
+            var t=-num*1200;
+            b2.style.transform='translateX('+t+'px)';
+        }
+    }
+    right.onclick=function(){
+        num++;
+        if(num>4){
+            num=0;
+        }
+        var t=-num*1200;
+            b2.style.transform='translateX('+t+'px)';
+            for(var j=0;j<list.length;j++){
+                list[j].className='';
+            }
+            list[num].className='current'
+    }
+    left.onclick=function(){
+        num--;
+        if(num<0){
+            num=4;
+        }
+        var t=-num*1200;
+            b2.style.transform='translateX('+t+'px)';
+            for(var j=0;j<list.length;j++){
+                list[j].className='';
+            }
+            list[num].className='current'
+    }      
+</script>
+<div class="a2">
+    <ul>
+        <li>
+            <a href="">首页</a>
+       </li>
+        <li>
+            <a href="发布留言.html" target="_blank">留言板</a>
+        </li>
+        <li>
+            <a href="潮汕风景.html" target="_blank">潮汕风景</a>
+        </li>
+        <li><a href="潮汕文化.html" target="_blank">潮汕文化</a>
+        </li>
+        <li>
+            <a href="潮汕美食.html" target="_blank">潮汕美食</a>
+        </li>
+        <li>
+            <a href="揭阳简介.html" target="_blank">揭阳简介</a>
+        </li>
+        <li>
+            <a href="潮州简介.html" target="_blank">潮州简介</a>
+        </li>
+        <li>
+            <a href="汕头简介.html"  target="_blank">汕头简介</a>
+        </li>
+        <li>
+            <a href="潮汕建筑.html" target="_blank">潮汕建筑</a>
+        </li>
+    </ul>        
+    </div>
+   <div class="a3">
+    <video src="vedio/vedio.01.mp4"  controls></video> 
+    <img src="images/p02.jpg" alt=""> 
+               <p>潮汕（Chaoshan），海外和旧时称潮州，是一个以潮汕方言为母语的汉族民系，是中国岭南沿海广东、香港、澳门、台湾等地的本地人之一，潮汕民系是广东三大汉族民系之一。潮汕人属于河洛人的一支，起源于古代中原，扬名于海内外。
+                潮汕人以广东潮汕地区为集中地与祖籍地，主要遍布在中国岭南沿海的广东、香港、澳门、台湾、海南等地，并于宋元时期开始，大量外迁到泰国、柬埔寨、新加坡、法国  、美国 、加拿大 、新西兰、印尼  等世界100多个国家和沿海地区  。潮汕是3000多万海外潮汕人魂牵梦绕的家乡。潮汕侨批入选世界记忆名录 。
+                工夫茶、潮州音乐、潮州筝、英歌舞等被列入国家级的非遗名录达46项（占广东非遗总数的1/4）。 蕴涵浓郁中古遗风的潮汕文化，被汉学家誉为"中原文化的典橱" 自唐代以来是中国海上丝绸之路的重要门户、对台的主要通道。  宋代以来享有“岭海名邦、南国邦郡、海滨邹鲁”之称。当代著名作家老舍作诗称“渴慕潮汕几十秋” 。
+                潮汕人自古在世界政治、经济、文化、科技、艺术等领域有一定成就 ，民国至今由潮汕走出去的博士已达到300多人，潮汕名人有泰国五大帝之首达信大帝 ，吴南生、谢国民、陈文雄，连瀛洲、陈弼臣、李嘉诚、黄光裕、马化腾、庄世平、饶宗颐、黄旭华、彭湃、许涤新、肖灼基、张明瑞、林重庆、许银川、郑秀文、杨千嬅、蔡澜等。</p>
+   </div>
+</div>
+</div>
+</body>
+</html>
